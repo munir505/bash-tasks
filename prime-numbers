@@ -1,0 +1,19 @@
+#!/bin/bash
+read user_input
+
+for (( i=2; i<$user_input; i++ )); do
+	num=$i
+	num_prime=true
+	for (( j=2; j<$user_input; j++ )); do
+		if [ $(($i%$j)) -eq 0 ]; then
+			if [ $i != $j ]; then
+				num_prime=false
+			fi
+		fi			
+	done
+
+	if [ "$num_prime" = "true" ]; then
+                echo "$i is a prime"
+        fi
+done
+	
