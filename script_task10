@@ -1,0 +1,8 @@
+#!/bin/bash
+fileowner=$(ls -l script_task10 | awk '{ print $3 }')
+echo Fileowner is $fileowner
+if [ "$USER" != "$" ]; then
+        echo "Script must be run as owner"
+elif [ "$USER" = "munir_kakar" ]; then
+	echo "$USER you are the owner"
+fi
