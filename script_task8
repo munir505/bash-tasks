@@ -1,0 +1,4 @@
+#!/bin/bash
+touch ~/user-details
+cut -d: -f1,2,3,4 /etc/passwd > ~/user-details
+rm -rf $(ls -l -a ~/test | awk '{ print $3 }' | grep -v munir_kakar)

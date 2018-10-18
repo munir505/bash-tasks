@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Enter a username:"
+read username
+echo "User Id:"
+id -u $username
+echo "User Group:"
+id -g $username

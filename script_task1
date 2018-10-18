@@ -1,0 +1,15 @@
+#!/bin/bash
+dir_name='QAC-Munir'
+mkdir ~/QAC-Munir
+
+for (( i=0; i<3; i++ )); do
+	touch ~/QAC-Munir/file$i
+done
+
+echo "Some text has been added to the file" >> ~/QAC-Munir/file0
+
+mkdir ~/QAC-Munir/child-dir
+
+cp ~/QAC-Munir/file0 ~/QAC-Munir/child-dir
+
+echo "Some more text has been added within this sub dir" >> ~/QAC-Munir/child-dir/file0	

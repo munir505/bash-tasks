@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Enter dir from home dir"
+read file_loc
+echo "Files in Dir"
+echo $file_loc
+ls -alF ~/$file_loc | wc -l
+echo "Last edited file"
+find ~/$file_loc -printf "%TY-%Tm-%Td %TT\n" | sort -nr | head -n 1
+echo "Smallest file"
+du -a ~/$file_loc | sort -n | head -n 1
+echo "Biggest File"
+du -a ~/$file_loc | sort -n -r | head -n 1

@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Enter Number:"
+read input_num
+
+if [ $((input_num%2)) -eq 0 ]; then
+	echo "$input_num is an even Number" >> ~/QAC-Munir/file1
+	echo "$input_num is an even Number"
+else
+	echo "$input_num is an odd Number" >> ~/QAC-Munir/file1
+	echo "$input_num is an odd Number"
+fi
+
+echo "Do you want to delete the file, enter y, for yes, or n, for no:"
+read delete
+
+if [ "$delete" == "y" ]; then
+	rm ~/QAC-Munir/file2
+elif [ "$delete" == "n" ]; then
+	touch ~/QAC-Munir/created-file
+fi
+
+mv ~/QAC-Munir/file1 ~/changed-file-name

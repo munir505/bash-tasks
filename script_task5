@@ -1,0 +1,21 @@
+#!/bin/bash
+doloop=true
+number_array=()
+while [ $doloop = true ]; do
+	echo "Enter"
+	read user_input
+	if [ "$user_input" = "stop" ]; then
+		doloop=false
+	elif [[ $user_input =~ ^[0-9]+$ ]]; then
+		number_array+=($user_input)	
+	else
+		echo "Numbers only"
+	fi 
+done 
+
+arr_size=${#number_array[@]}
+
+for (( i=0; i<$arr_size; i++ )); do
+	echo ${number_array[i]}	
+done
+

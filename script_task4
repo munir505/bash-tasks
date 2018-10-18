@@ -1,0 +1,5 @@
+#!/bin/bash
+ps
+echo "Enter a Id to kill:"
+read id
+kill -9 $id
