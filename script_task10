@@ -1,8 +1,11 @@
 #!/bin/bash
-fileowner=$(ls -l script_task10 | awk '{ print $3 }')
-echo Fileowner is $fileowner
-if [ "$USER" != "$" ]; then
+read filename
+fileowner=$(ls -l $filename | awk '{ print $3 }')
+
+if [ "$USER" != "$fileowner" ]; then
         echo "Script must be run as owner"
-elif [ "$USER" = "munir_kakar" ]; then
+	sudo chmod 700 $filename
+elif [ "$USER" == "$fileowner" ]; then
 	echo "$USER you are the owner"
+	sudo chmod 744 $filename
 fi
