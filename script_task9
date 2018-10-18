@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Enter Either 'I' for Install or 'U' for Uninstall:"
+read input
+
+if [ "$input" = "I" ]; then
+	sudo apt-get install default-jre
+elif [ "$input" = "U" ]; then
+	sudo apt-get remove default-jre
+fi
