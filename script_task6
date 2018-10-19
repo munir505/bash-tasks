@@ -1,12 +1,15 @@
 #!/bin/bash
 echo "Enter number range:"
 read user_number
-for i in $(seq 0 1 $user_number) 
-do
+number_array=()
+for (( i=1; i<=$user_number ; i++ )); do
+	number_array+=($i)
+done
+ for (( i=0; i<$user_number ; i++ )); do
         #echo ${number_array[$i]}
-	if [ $($i%3) -eq 0 ]; then
-		echo "$i is Fizz"
-	elif [ $($i%5) -eq 0 ]; then
-		echo "$i is Buzz"
+	if [ $((${number_array[$i]}%3)) -eq 0 ]; then
+		echo "${number_array[$i]} is Fizz"
+	elif [ $((${number_array[$i]}%5)) -eq 0 ]; then
+		echo "${number_array[$i]} is Buzz"
 	fi
 done
